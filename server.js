@@ -5,10 +5,10 @@ const app = express();
 
 const port = 3000;
 
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
-app.use('/', require('./controllers/animals'));
+app.use('/animals', require('./controllers/animals'));
 
 app.get('/', (req, res) => {
   res.send('Find Your Missing Pet');
